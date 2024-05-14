@@ -83,7 +83,7 @@ const Bmi = () =>{
                         <InputType1  label={"System"} options={[{id: 1 , text:"Imperial\n(lbs/in)"},{id:2 , text:"Metric\n(Kg/cm)"}]} defaultval={system} callback={handleSystem}/>
                             <InputType1  label={"I'm a"} options={[{id:1 , text:"Male"} , {id:2 , text:"Female"}]} defaultval={gender} callback={handleGender}/>
                             <InputType2 label1={"I am"} label2={"years young"} minval={1} maxval={100} defaultval={age} callback={handleAge}/>
-                            <InputType2 label1={"My Heighth:"} label2={heightunit} minval={1} maxval={250} defaultval={height} callback={handleHeight}/>
+                            <InputType2 label1={"My Height:"} label2={heightunit} minval={1} maxval={250} defaultval={height} callback={handleHeight}/>
                             <InputType2 label1={"Current Weight:"} label2={weightunit} minval={1} maxval={180} defaultval={weight} callback={handleWeight}/>
                         </div>
 

@@ -106,7 +106,7 @@ const Macros = () =>{
                         <InputType1  label={"What is your main weight goal?"} options={[{id:1 , text:'Lose'} , {id:2  ,text:'Maintain'} , {id:3 , text:'Gain'}]} defaultval={goal}  callback={handleGoal}/>
 
                         <InputType2 label1={"I am"} label2={"years young"} minval={1} maxval={100} defaultval={age} callback={handleAge}/>
-                        <InputType2 label1={"My Heighth:"} label2={heightunit} minval={1} maxval={250} defaultval={height} callback={handleHeight}/>
+                        <InputType2 label1={"My Height:"} label2={heightunit} minval={1} maxval={250} defaultval={height} callback={handleHeight}/>
                         <InputType2 label1={"Current Weight:"} label2={weightunit} minval={1} maxval={180} defaultval={weight} callback={handleWeight}/>
 
                         <InputType1 label={"Activity level"} options={[{ id: 1, text: "Sedentary\n(no exercise)" },{ id: 2, text: "Moderate\n(3x-4x per week)" },{ id: 3, text: "Active\n(5x+ per week)" }]} defaultval={Activity} callback={handleActivity}/>
@@ -132,9 +132,9 @@ const Macros = () =>{
                     <div>
                         <h1 className="pt-8 opacity-80 text-sm tracking-wide font-medium">Daily Macros</h1>
                         <div className=" grid grid-cols-3 gap-x-4">
-                            <Displaybox label={"Protein"} val={Math.floor(macro*0.35*0.25)} icon={<FaDumbbell size={25} />}/>
-                            <Displaybox label={"Carbs"} val={Math.floor(macro*0.40*0.25)} icon={<GiFruitBowl  size={25}  />}/>
-                            <Displaybox label={"Fat"} val={Math.floor(macro*0.25*0.11)} icon={<GiFrenchFries  size={25}  />}/>
+                            <Displaybox label={"Protein"} val={`${Math.floor(macro*0.35*0.25)}g`} icon={<FaDumbbell size={25} />}/>
+                            <Displaybox label={"Carbs"} val={`${Math.floor(macro*0.40*0.25)}g`} icon={<GiFruitBowl  size={25}  />}/>
+                            <Displaybox label={"Fat"} val={`${Math.floor(macro*0.25*0.11)}g`} icon={<GiFrenchFries  size={25}  />}/>
                         </div>
                     </div>
 
