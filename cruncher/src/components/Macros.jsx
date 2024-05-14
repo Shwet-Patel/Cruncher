@@ -139,11 +139,11 @@ const Macros = () =>{
                     </div>
 
                     {/* additional description */}
-                    <div className="mt-8">
+                    <div className="mt-8 text-center md:text-left">
                         <h1 className="text-2xl tracking-wider font-bold">Our formula for you</h1>
-                        <div className="grid grid-cols-[55%,45%]">
+                        <div className="grid md:grid-cols-[55%,45%]">
                             <div>
-                                <p className=" pt-4 opacity-80 text-sm tracking-normal font-medium">If you're counting macros for bodybuilding and 
+                                <p className=" pt-4 opacity-80 text-sm tracking-normal  font-medium">If you're counting macros for bodybuilding and 
                                     muscle gain, you'll want to add overall calories 
                                     to put on weight. Try this range of macro ratio:
                                     40% Carbs, 35% protein, 25% fat.
