@@ -5,6 +5,7 @@ import { TbCalculatorFilled } from "react-icons/tb";
 //Components
 import InputType1 from "./InputType1";
 import InputType2 from "./InputType2";
+import { BmiTable } from "./Data";
 
 //react utilities
 import { useState } from "react";
@@ -16,6 +17,8 @@ const Bmi = () =>{
     const [age , setAge] = useState(27);
     const [height , setHeight] = useState(171);
     const [weight , setWeight] = useState(75);
+    const [bmi , setBmi] = useState(0);
+    const [review , setReview] = useState('No idea');
 
     //local constants
     const heightunit = (system === 1 ? "in" : "cm");
@@ -42,7 +45,22 @@ const Bmi = () =>{
     };
 
     function handleBmi(){
-        //do something.
+        var val,unitlbs,unitkgs;
+
+        unitlbs = (weight/(height*height))*703;
+        unitkgs = (weight/(height*height))*10000;
+
+        val = (system === 1) ? (unitlbs) : (unitkgs);
+        setBmi(val);
+
+        if(val <= 18.5)
+            setReview("Underweight");
+        else if(val <= 24.9)
+            setReview("Normal");
+        else if(val <= 29.9)
+            setReview("Overweight");
+        else
+            setReview("Obese");
     };
 
 
@@ -59,7 +77,7 @@ const Bmi = () =>{
                     {/* inputs */}
                     <div className=" mt-1 px-8 font-sans text-darkblue opacity-90 mb-4">
                         <h1 className=" text-2xl tracking-wider font-bold ">Calculate Your BMI</h1>
-                        <h3 className=" opacity-80 text-sm tracking-wide font-medium">Know your BMI now using our BMI calculator.</h3>
+                        <h3 className=" opacity-80 text-sm tracking-wide font-medium">Know your BMI (Body mass index) now using our BMI calculator.</h3>
 
                         <div className="mt-4">
                         <InputType1  label={"System"} options={[{id: 1 , text:"Imperial\n(lbs/in)"},{id:2 , text:"Metric\n(Kg/cm)"}]} defaultval={system} callback={handleSystem}/>
@@ -74,8 +92,39 @@ const Bmi = () =>{
                     </div>
 
                     {/* Display output */}
-                    <div className= " bg-darkcream px-8 py-4 font-sans text-darkblue opacity-90">
-                        hello from col-2
+                    <div className= "flex flex-col place-items-center bg-darkcream px-8 py-4 font-sans text-darkblue opacity-90">
+                        <div className="flex flex-col place-items-center">
+                            <h1 className="text-2xl tracking-wider font-bold">Your BMI</h1>
+                            <div className="inline-flex flex-col mt-6 bg-gradient-to-b from-lightcream to-lightpink  rounded-full px-4 py-4">
+                                <div className=" bg-lightcream flex flex-col px-3 py-8 place-items-center rounded-full">
+                                    <h1 className="text-2xl tracking-wider font-bold duration-300 min-w-24 text-center">{bmi.toFixed(1)}</h1>
+                                    <h3 className="opacity-80 text-sm tracking-wide font-medium">{review}</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* additional description */}
+                        <h1 className=" mt-8 text-2xl tracking-wider font-bold">General BMI Range</h1>
+                        <div className="mt-4 bg-lightcream px-4 py-2 text-center rounded-md">
+                            <table>
+                                <thead>
+                                    <tr className="border-b-2 border-lightpink">
+                                        <th className="px-4 py-2">Bmi Range</th>
+                                        <th className="px-4 py-2">Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {BmiTable.map((entry) => {
+                                        return(
+                                        <tr key={entry.id} className=" opacity-80 text-sm tracking-wide font-medium">
+                                            <td>{entry.range}</td>
+                                            <td>{entry.category}</td>
+                                        </tr>
+                                    );
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>  

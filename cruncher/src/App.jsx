@@ -13,9 +13,8 @@ function App() {
       <div className=" bg-darkcream  grid grid-cols-[20%,80%] mx-auto max-w-6xl  shadow-xl rounded-lg">
         
         {/* Sidebar */}
-
-        {/* sidebar title */}
         <div>
+          {/* sidebar title */}
           <div className="flex flex-row pl-8 mt-4 gap-x-3">
             <FaFire size={32} color="Pink" />
             <h1 className=" font-bold text-darkblue text-3xl">Cruncher</h1>

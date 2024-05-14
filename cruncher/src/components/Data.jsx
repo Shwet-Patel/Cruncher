@@ -9,3 +9,10 @@ export const SidebarItems = [
     { id:3 , title : "Body fat Calc" , icon : <PiShirtFoldedFill   size={20} className="text-darkblue place-self-center"/>},
     { id:4 , title : "Ideal Weight" , icon : <FaFeather  size={20} className="text-darkblue place-self-center"/> },
 ];
+
+export const BmiTable = [
+    { id:1 , range : "Under 18.5" , category : "Underweight"},
+    { id:2 , range : "18.5 - 24.9", category : "Normal"},
+    { id:3 , range : "25 - 29.9" , category : "Overweight"},
+    { id:4 , range : "30 and over" , category : "Obese"},
+];
