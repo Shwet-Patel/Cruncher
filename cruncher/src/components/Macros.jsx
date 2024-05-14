@@ -94,7 +94,7 @@ const Macros = () =>{
             </div>
 
             
-            <div className="  grid grid-cols-[60%,40%]">
+            <div className="  grid md:grid-cols-[60%,40%]">
                 {/* inputs */}
                 <div className=" mt-1 px-8 font-sans text-darkblue opacity-90 mb-4">
                     <h1 className=" text-2xl tracking-wider font-bold ">Calculate Your Macros</h1>

@@ -90,7 +90,7 @@ const Bodyfat = () =>{
                     <h1 className=" font-sans text-lg text-darkblue font-bold">Bodyfat Calculator</h1>
                 </div>
 
-                <div className="  grid grid-cols-[60%,40%]">
+                <div className="  grid lg:grid-cols-[60%,40%]">
                     {/* inputs */}
                     <div className=" mt-1 px-8 font-sans text-darkblue opacity-90 mb-4">
                         <h1 className=" text-2xl tracking-wider font-bold ">Calculate Your Bodyfat</h1>
@@ -122,7 +122,7 @@ const Bodyfat = () =>{
                         </div>
 
                         <div>
-                            <h1 className="pt-4 opacity-80 text-sm tracking-wide font-medium">Mass distribution</h1>
+                            <h1 className="pt-4 opacity-80 text-sm text-center tracking-wide font-medium">Mass distribution</h1>
                             <div className=" grid grid-cols-2">
                                 <Displaybox label={"Fat mass"} val={`${(bfp * 0.01 * weight).toFixed(1)} ${weightunit}`} icon={<CiPizza size={30}/>} />
                                 <Displaybox label={"Lean mass"} val={`${((100 - bfp)*0.01*weight).toFixed(1)} ${weightunit}`} icon={<GiBiceps size={30}/>} />

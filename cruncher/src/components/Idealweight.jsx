@@ -55,7 +55,7 @@ const Idealweight = () =>{
                 <h1 className=" font-sans text-lg text-darkblue font-bold">Ideal Weight Calculator</h1>
             </div>
 
-            <div className="  grid grid-cols-[60%,40%]">
+            <div className="  grid lg:grid-cols-[60%,40%]">
                 {/* inputs */}
                 <div className=" mt-1 px-8 font-sans text-darkblue opacity-90 mb-4">
                     <h1 className=" text-2xl tracking-wider font-bold ">Calculate Your Ideal Weight</h1>
